@@ -177,7 +177,7 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
     return rupees;
   };
 
-  loadState(localStorage.state);
+  loadState(localStorage.dkc2race);
 
   requestAnimationFrame(function animateClock() {
     var clock = document.getElementById("clock");
@@ -292,7 +292,7 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
 
   function saveState() {
     sortPeople();
-    localStorage.state = window.angular.toJson($scope.state);
+    localStorage.dkc2race = window.angular.toJson($scope.state);
     playPauseMusic();
   }
 
@@ -313,7 +313,7 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
 
   $scope.resetState = function() {
     if (confirm("delete all 50 states?")) {
-      localStorage.clear();
+      delete localStorage.dkc2race;
       location.href = location.href;
     }
   };
