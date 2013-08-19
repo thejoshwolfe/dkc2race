@@ -9,16 +9,6 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
   $scope.state = {
     people: [
       {
-        name: "Andy",
-        times: [],
-        profile_img: "img/faces/andy.png",
-      },
-      {
-        name: "James",
-        times: [],
-        profile_img: "img/faces/james.png",
-      },
-      {
         name: "Sam",
         times: [],
         profile_img: "img/faces/sam.png",
@@ -28,63 +18,32 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
         times: [],
         profile_img: "img/faces/kyle.png",
       },
-      {
-        name: "Josh",
-        times: [],
-        profile_img: "img/faces/josh_wolfe.png",
-      },
-      {
-        name: "Mike",
-        times: [],
-        profile_img: "img/faces/mike.png",
-      },
     ],
     gameState: 'setup',
     checkpoints: [
       {
-        name: "Deku Tree",
-        img_src: "img/deku_stone.png",
-        desc: "Pause after the Deku Tree's speech.",
+        name: "Gangplank Galleon",
+        img_src: "img/krow.png",
       },
       {
-        name: "Dodongo's Cavern",
-        img_src: "img/goron_stone.png",
-        desc: "Pause after Darunia's speech.",
+        name: "Crocodile Cauldron",
+        img_src: "img/kleaver.png",
       },
       {
-        name: "Adult Link",
-        img_src: "img/multi_award.png",
-        desc: "Pause after speaking to Shiek.",
+        name: "Krem Quay",
+        img_src: "img/kudgel.png",
       },
       {
-        name: "Forest Temple",
-        img_src: "img/Forest_Medallion.png",
-        desc: "Pause after speaking to the Deku seed.",
+        name: "Krazy Kremland",
+        img_src: "img/kingzing.png",
       },
       {
-        name: "Fire Temple",
-        img_src: "img/Fire_Medallion.png",
-        desc: "Pause after you receive the Fire Medallion.",
+        name: "Gloomy Gulch",
+        img_src: "img/kreepykrow.png",
       },
       {
-        name: "Water Temple",
-        img_src: "img/Water_Medallion.png",
-        desc: "Pause after talking to Shiek at Lake Hylia.",
-      },
-      {
-        name: "Shadow Temple",
-        img_src: "img/Shadow_Medallion.png",
-        desc: "Pause after you receive the Shadow Medallion.",
-      },
-      {
-        name: "Spirit Temple",
-        img_src: "img/Spirit_Medallion.png",
-        desc: "Pause after you receive the Spirit Medallion.",
-      },
-      {
-        name: "Ganon's Castle",
-        img_src: "img/triforce.png",
-        desc: "Hit the timer at the \"The End\" screen.",
+        name: "K. Rool",
+        img_src: "img/krool.png",
       },
     ],
     current_checkpoint: 0,

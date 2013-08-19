@@ -20,10 +20,10 @@
       <button ng-click="save()">Save</button>
       <button ng-click="startGame()">Start Game</button>
       <br>
-      <img src="img/lol/slashing_link.gif" style="width:200px">
-      <img src="img/lol/ZeldaLinkAni.gif">
-      <img src="img/lol/Link_sword.gif">
-      <img src="img/lol/animated.gif">
+      <img src="img/lol/splash.gif" style="height:400px">
+      <img src="img/lol/dk_barrel.gif" style="height:150px">
+      <img src="img/lol/kixie.gif" style="height:400px">
+      <img src="img/lol/did.gif" style="height:150px">
     </div>
     <div ng-show="state.gameState == 'race'">
       <img src="img/standby.png" id="light-standby">
@@ -39,14 +39,14 @@
         </div>
         START GO!!!!!!
       </button>
-      <img ng-show="isGameOver()" src="img/lol/triforce_video.gif">
+      <img ng-show="isGameOver()" src="img/lol/done.png">
       <table>
         <tr>
           <th>
             <img src="img/owl.png" style="width:80px" title="Do you want to hear what I just said again?">
           </th>
           <th ng-repeat="checkpoint in state.checkpoints">
-            <img ng-src="{{checkpoint.img_src}}" title="{{checkpoint.desc}}" style="max-width: 60px">
+            <img ng-src="{{checkpoint.img_src}}" style="max-width: 60px">
             <br>
             {{ checkpoint.name }}
           </th>
@@ -88,9 +88,9 @@
         </tr>
       </table>
       <br>
-      <img src="img/lol/link.gif">
-      <img src="img/lol/original.gif">
-      <img src="img/lol/ocarina_1.gif">
+      <img src="img/lol/pals.jpg" style="height:300px">
+      <img src="img/lol/links.gif" style="height:300px">
+      <img src="img/lol/krool.jpg" style="height:300px">
       <br>
       <button ng-click="backToSetup()">Back</button>
     </div>
