@@ -311,10 +311,9 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
   function currentTitle() {
     if ($scope.state.gameState === "race") {
       var checkpoint = $scope.currentCheckpoint();
-      return checkpoint.name + " - DKC2 Race - ";
-    } else {
-      return "DKC2 Race - ";
+      if (checkpoint) return checkpoint.name + " - DKC2 Race - ";
     }
+    return "DKC2 Race - ";
   }
 
   var marqueeIndex = 0;
