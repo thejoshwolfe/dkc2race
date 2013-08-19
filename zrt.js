@@ -12,14 +12,24 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
   $scope.state = {
     people: [
       {
-        name: "Sam",
+        name: "Josh",
         times: [],
-        profile_img: "img/faces/sam.png",
+        profile_img: "img/faces/josh_wolfe.png",
       },
       {
         name: "Kyle",
         times: [],
         profile_img: "img/faces/kyle.png",
+      },
+      {
+        name: "Lukas",
+        times: [],
+        profile_img: "http://media.steampowered.com/steamcommunity/public/images/avatars/22/22810a6ecd7c4532209c4606ae0b9d95bc5898db_full.jpg",
+      },
+      {
+        name: "Sam",
+        times: [],
+        profile_img: "img/faces/sam.png",
       },
     ],
     gameState: 'setup',
