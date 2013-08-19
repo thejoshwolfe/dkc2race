@@ -305,11 +305,11 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
   };
 
   function currentTitle() {
-    if ($scope.state.gameState === "play") {
+    if ($scope.state.gameState === "race") {
       var checkpoint = $scope.currentCheckpoint();
-      return checkpoint.name + " - Zelda Race - ";
+      return checkpoint.name + " - DKC2 Race - ";
     } else {
-      return "Zelda Race - ";
+      return "DKC2 Race - ";
     }
   }
 
@@ -370,24 +370,21 @@ window.APP.directive('rupeeDisplay', function() {
       var total = $scope.$eval(attrs.rupeeCount);
       elem[0].innerHTML = "";
 
-      var purple = Math.floor(total / 50);
-      total -= purple * 50;
-      makeImgs(purple, "purple");
+      var units = [
+        {name: "blue", value: 3},
+        {name: "green", value: 2},
+        {name: "red", value: 1},
+      ];
 
-      var red = Math.floor(total / 20);
-      total -= red * 20;
-      makeImgs(red, "red");
-
-      var blue = Math.floor(total / 5);
-      total -= blue * 5;
-      makeImgs(blue, "blue");
-
-      var green = total;
-      makeImgs(green, "green");
+      for (var i = 0; i < units.length; i++) {
+        var number = Math.floor(total / units[i].value);
+        total -= number * units[i].value;
+        makeImgs(number, units[i].name);
+      }
 
       function makeImgs(count, color_name) {
         for (var i = 0; i < count; i++) {
-          elem.append('<img src="img/rupee-' + color_name + '.png">');
+          elem.append('<img src="img/balloon-' + color_name + '.gif">');
         }
       }
     }

@@ -1,7 +1,7 @@
 <!doctype html>
 <html ng-app="main">
   <head>
-    <title>Zelda Race - </title>
+    <title>DKC2 Race -</title>
     <link rel="stylesheet" href="zzzzzzzzzzzz.css">
     <script src="angular.js"></script>
     <script src="zrt.js"></script>
@@ -43,7 +43,7 @@
       <table>
         <tr>
           <th>
-            <img src="img/owl.png" style="width:80px" title="Do you want to hear what I just said again?">
+            <img src="img/checkpoint.gif" style="width:50px">
           </th>
           <th ng-repeat="checkpoint in state.checkpoints">
             <img ng-src="{{checkpoint.img_src}}" style="max-width: 60px">
@@ -51,14 +51,14 @@
             {{ checkpoint.name }}
           </th>
           <th>
-            <img src="img/net.png" style="width:60px">
+            <img src="img/cranky.png" style="width:60px">
             <br>
-            Net Time
+            Total Age
           </th>
           <th>
-            <img src="img/wallet.png" style="width:60px">
+            <img src="img/bonus.gif" style="width:60px">
             <br>
-            Rupees
+            Happiness
           </th>
         </tr>
         <tr ng-repeat="person in state.people">
