@@ -3,7 +3,10 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
   var happyFunTimeAudio = new Audio("mario-kart.ogg");
   var mood_music_audio = new Audio("wrong-game.ogg");
   mood_music_audio.loop = true;
-  var huzzah_audio = new Audio("fans.ogg");
+  var huzzah_audio = [
+    new Audio("diddywins.ogg"),
+    new Audio("dixiewins.ogg"),
+  ];
   var requestAnimationFrame = window.requestAnimationFrame;
 
   $scope.state = {
@@ -117,7 +120,8 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
       $scope.state.current_checkpoint += 1;
     }
     saveState();
-    huzzah_audio.play();
+    var audio = huzzah_audio[Math.floor(Math.random() * 2)];
+    audio.play();
   };
 
   $scope.totalTime = function(person) {
