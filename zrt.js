@@ -1,4 +1,3 @@
-
 window.APP = window.angular.module('main', []).controller('MainCtrl', function($scope) {
   var happyFunTimeAudio = new Audio("mario-kart.ogg");
   var mood_music_audio = new Audio("wrong-game.ogg");
@@ -7,6 +6,7 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
     new Audio("diddywins.ogg"),
     new Audio("dixiewins.ogg"),
   ];
+  var currentBgm;
   var requestAnimationFrame = window.requestAnimationFrame;
 
   $scope.state = {
@@ -115,7 +115,7 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
     // mario kart gives an 8 second count down
     checkpoint.start = new Date(new Date().getTime() + 8000);
     saveState();
-    happyFunTimeAudio.play();
+    setCurrentBgm(happyFunTimeAudio);
   };
 
   $scope.personIsDone = function(person) {
@@ -130,8 +130,7 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
       $scope.state.current_checkpoint += 1;
     }
     saveState();
-    var audio = huzzah_audio[Math.floor(Math.random() * 2)];
-    audio.play();
+    setCurrentBgm(huzzah_audio[Math.floor(Math.random() * 2)]);
   };
 
   $scope.totalTime = function(person) {
@@ -147,6 +146,14 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
       return person.times[checkpoint_index];
     });
   };
+  
+  function setCurrentBgm(bgm) {
+    if (currentBgm) {
+      currentBgm.pause();
+      currentBgm.currentTime = 0;
+    }
+    currentBgm = bgm ? bgm.play() : bgm;
+  }
 
   function rupeesForSomething(person, timeForPerson) {
     var my_time = timeForPerson(person);
@@ -236,9 +243,9 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
 
   function playPauseMusic() {
     if ($scope.state.gameState === "setup") {
-      mood_music_audio.play();
+      setCurrentBgm(mood_music_audio.play());
     } else {
-      mood_music_audio.pause();
+      setCurrentBgm();
     }
   }
 
