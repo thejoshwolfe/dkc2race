@@ -148,8 +148,10 @@ window.APP = window.angular.module('main', []).controller('MainCtrl', function($
   };
   
   function setCurrentBgm(bgm) {
-    if (currentBgm)
+    if (currentBgm) {
       currentBgm.pause();
+      currentBgm.currentTime = 0;
+    }
     currentBgm = bgm ? bgm.play() : bgm;
   }
 
